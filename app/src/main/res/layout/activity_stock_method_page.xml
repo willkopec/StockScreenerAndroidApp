@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6B1fA"
+    tools:context=".StockMethodPage">
+
+    <Button
+        android:id="@+id/goldCrossButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#5cf275"
+        android:text="Golden Cross MA"
+        android:textColor="@color/black"
+        app:layout_constraintDimensionRatio="7:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline13"
+        app:layout_constraintStart_toStartOf="@id/guideline10"
+        app:layout_constraintTop_toTopOf="@id/guideline14" />
+
+    <Button
+        android:id="@+id/deathCrossButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#5cf275"
+        android:text="Death Cross MA"
+        android:textColor="@color/black"
+        app:layout_constraintDimensionRatio="7:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline13"
+        app:layout_constraintStart_toStartOf="@id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/goldCrossButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please select the screener method:"
+        android:textColor="#1f2ed1"
+        app:layout_constraintStart_toStartOf="@id/guideline8"
+        app:layout_constraintTop_toTopOf="@id/guideline11" />
+
+    <TextView
+        android:id="@+id/scanningText"
+        android:layout_width="321dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="72dp"
+        android:textColor="#67a4d6"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/deathCrossButton" />
+
+    <Button
+        android:id="@+id/cancelScan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Cancel Current Scan"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline13"
+        app:layout_constraintStart_toStartOf="@id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/guideline12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <Button
+        android:id="@+id/viewStocksBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="View StockList"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline13"
+        app:layout_constraintStart_toStartOf="@id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/guideline12" />
+</androidx.constraintlayout.widget.ConstraintLayout>

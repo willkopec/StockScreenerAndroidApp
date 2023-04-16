@@ -1,6 +1,17 @@
-from yahoo_fin import stock_info as si
-from lxml import html
 import pandas as pd
+import logging
+import threading
+from yahoo_fin import stock_info as si
+from time import sleep
+
+intThread = 0
+
+def stop_loop():
+    global intThread
+    intThread = 1
+    sleep(2)
+    intThread = 0
+	
 
 def getStockData(stock, timeFrame, fromDate, toDate):
     if(fromDate == "" and toDate == ""):
@@ -53,13 +64,21 @@ def scanStock(df, strategy):
 
     return goldenCross, deathCross
 
-def checkStocks(stockList, timeFrame, strategy, fromDate, toDate, loopIters):
+def checkStocks(curList, timeFrame, strategy, fromDate, toDate, loopIters):
     iters = 0
 
     stockListStr = ""
 
+    if(curList == "sp"):
+        stockList = si.tickers_sp500()
+    elif(curList == "dow"):
+        stockList = si.tickers_dow()
+    elif(curList == "nsdq"):
+        stockList = si.tickers_nasdaq()
+
     for i in range(len(stockList)):
         iters+=1
+        print("intThread is ", intThread)
 
         goodVolume = False
         goldenCross = False
@@ -82,6 +101,7 @@ def checkStocks(stockList, timeFrame, strategy, fromDate, toDate, loopIters):
         #Get all indicators and store them in the DataFrame
         if goodVolume:
             #Mark which criteria are met
+            #print("DO SOMETHING HERE")
             goldenCross, deathCross = scanStock(df, strategy)
 
         if((strategy == "up" and goldenCross) or (strategy == "Up" and goldenCross)):
@@ -90,14 +110,13 @@ def checkStocks(stockList, timeFrame, strategy, fromDate, toDate, loopIters):
             stockListStr += stock + ","
 
         #break out of loop after searching X stocks.
-        if(iters >= loopIters):
+        if(iters >= loopIters or intThread == 1):
             break
-
 
     return stockListStr
 
 #testList = si.tickers_sp500()
 #testList = ["QCOM", "PEP", "SVB", "TSLA"]
 #print(len(testList))
-#finalList2 = checkStocks(testList, "d", "down", "", "", 550)
+# = checkStocks("dow", "d", "down", "", "", 550)
 #print (finalList2)

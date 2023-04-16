@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!--
+     Need permission for internet access in order to obtain dataframe of the stocks
+     via yahoo_fin library
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +17,15 @@
         android:theme="@style/Theme.Ploitable"
         tools:targetApi="31">
         <activity
+            android:name=".StockListViewPage"
+            android:exported="false" />
+        <activity
+            android:name=".timeFramePage"
+            android:exported="false" />
+        <activity
+            android:name=".StockMethodPage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -21,10 +35,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <!--Need permission for internet access in order to obtain dataframe of the stocks
-     via yahoo_fin library-->
-    <uses-permission android:name="android.permission.INTERNET" />
-
 
 </manifest>
