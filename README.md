@@ -32,6 +32,7 @@ The User Interface for this application is scalable for all Android devices, inc
 ## Credits/Libraries used:
 #### Java Libraries:
 Android Studio: https://developer.android.com/studio (IDE used to run and build the project)
+
 Chaquopy: https://chaquo.com/chaquopy/
 
 #### Python Libraries:
