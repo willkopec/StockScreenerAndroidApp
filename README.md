@@ -10,7 +10,7 @@ After scanning an index, the stocks that meet the required criteria will pop up 
 This project uses Java to create the User Interface via Android Studio and import all of the libraries needed to run the project. One of the libraries used in this project is called Chaquopy and allows for Python code to be run in Android Studio and necessary Python libraries to be imported. The Python code used in this project is the main code used to scan through the different market indices and check for stocks that meet the required criteria for the trading strategy.
 
 ## Features and images of the application:
-The User Interface for this application is scalable for all Android devices, including desktop.
+The User Interface for this application is scalable for all Android devices, including desktop. This application also uses threading Via Async Tasks for the User Interface so it can run without pausing after certain buttons are clicked and processes run in the background for basic functionality.
 
 ###### App on emulated android device (Pixel 2):
 ![app page1](https://user-images.githubusercontent.com/85149000/232635738-0802c837-ba73-40ed-964a-25efeb67bd78.png)
@@ -28,3 +28,12 @@ The User Interface for this application is scalable for all Android devices, inc
 ![device compatibility page 3 part 2](https://user-images.githubusercontent.com/85149000/232635737-9f116738-541a-4a5b-9d1e-ee9260284d99.png)
 ![device compatibility page 4 part 1](https://user-images.githubusercontent.com/85149000/232635822-411224cc-32e9-4449-a93f-f5f6f64e6982.png)
 ![device compatibility page 4 part 2](https://user-images.githubusercontent.com/85149000/232635823-39399f0b-924f-49f3-8c60-cb7221630828.png)
+
+## Credits/Libraries used:
+#### Java Libraries:
+Android Studio: https://developer.android.com/studio (IDE used to run and build the project)
+Chaquopy: https://chaquo.com/chaquopy/
+
+#### Python Libraries:
+Yahoo_Fin: https://theautomatic.net/yahoo_fin-documentation/
+Pandas: https://pandas.pydata.org/
